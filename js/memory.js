@@ -17,8 +17,22 @@ class MemoryGame {
   }
 
  checkIfPair(card1, card2) {
-   
+    // the action must be counted up in the picked cards array
+    // cards must be compared
+   this.pairsClicked++;
+    if (card1 === card2) {
+      this.pairsGuessed++;
+     return true;
+    } else {
+     return false;
+    }
   }
 
-  isFinished() {}
+  isFinished() {
+    if (this.pairsGuessed === (this.cards.length / 2)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 } 
